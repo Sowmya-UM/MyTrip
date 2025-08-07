@@ -1,6 +1,5 @@
 
-<!-- //TRAIL -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -97,7 +96,7 @@
       let isValid = true;
 
       inputs.forEach(input => {
-        const errorDiv = input.nextElementSibling;
+        const errorDiv = input.parentElement.querySelector('.error');
         if (input.value.trim() === "") {
           errorDiv.textContent = `${input.name.charAt(0).toUpperCase() + input.name.slice(1)} is required`;
           isValid = false;
@@ -107,21 +106,38 @@
       });
 
       // Password match check
+      const confirmPasswordError = confirmPassword.parentElement.querySelector('.error');
       if (password.value.trim() !== confirmPassword.value.trim()) {
-        const confirmPasswordError = confirmPassword.parentElement.querySelector('.error');
         confirmPasswordError.textContent = "Passwords do not match";
-
         isValid = false;
+      } else if (confirmPassword.value.trim() !== "") {
+        confirmPasswordError.textContent = "";
       }
-      
 
       if (isValid) {
+        // Clear all input fields
+        name.value = '';
+        email.value = '';
+        password.value = '';
+        confirmPassword.value = '';
+
+        // Redirect (simulate successful signup)
         window.location.href = 'Homepage.html';
       }
 
       return false; // prevent default form submit
     }
+
+    // Clear error while typing
+    ['name', 'email', 'password', 'confirmPassword'].forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        const input = document.getElementById(id);
+        const errorDiv = input.parentElement.querySelector('.error');
+        errorDiv.textContent = "";
+      });
+    });
   </script>
 
 </body>
 </html>
+
