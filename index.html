@@ -1,0 +1,250 @@
+
+<!-- //TRAIL -->
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+
+<body style="background-image: url('Signupbackground.png'); background-size: cover; background-repeat: no-repeat; background-position: center; height: 100vh; width: 100%;"> -->
+
+  <!-- <div class="flex justify-center items-center h-full w-full">
+    <form id="form" class="bg-white p-6 rounded shadow w-[350px]" onsubmit="return validateForm()"> -->
+      
+      <!-- Name Input -->
+      <!-- <div class="flex flex-col mb-4">
+        <label for="name" class="mb-1 text-sm font-medium text-gray-700">Name</label>
+        <input id="name" name="name" type="text" required placeholder="Enter your name"
+          class="p-2 w-full rounded border-2 border-[#f0f0f0] focus:outline-none"/>
+        <div class="error text-red-500 text-sm mt-1"></div>
+      </div> -->
+
+      <!-- Email Input -->
+      <!-- <div class="flex flex-col mb-4">
+        <label for="email" class="mb-1 text-sm font-medium text-gray-700">Email</label>
+        <input id="email" name="email" type="email" required placeholder="Enter your email"
+          class="p-2 w-full rounded border-2 border-[#f0f0f0] focus:outline-none"/>
+        <div class="error text-red-500 text-sm mt-1"></div>
+      </div> -->
+
+      <!-- Password -->
+      <!-- <div class="relative flex flex-col mb-4">
+        <label for="password" class="mb-1 text-sm font-medium text-gray-700">Password</label>
+        <input id="password" name="password" type="password" required placeholder="Enter your password"
+          class="p-2 w-full rounded border-2 border-[#f0f0f0] focus:outline-none pr-10"/>
+        <span class="absolute right-3 top-9 cursor-pointer text-gray-500" onclick="togglePasswordVisibility('password', 'togglePasswordIcon1')">
+          <i id="togglePasswordIcon1" class="fas fa-eye-slash"></i>
+        </span>
+        <div class="error text-red-500 text-sm mt-1"></div>
+      </div> -->
+
+      <!-- Confirm Password -->
+      <!-- <div class="relative flex flex-col mb-4">
+        <label for="confirmPassword" class="mb-1 text-sm font-medium text-gray-700">Confirm Password</label>
+        <input id="confirmPassword" name="confirmPassword" type="password" required placeholder="Confirm your password"
+          class="p-2 w-full rounded border-2 border-[#f0f0f0] focus:outline-none pr-10"/>
+        <span class="absolute right-3 top-9 cursor-pointer text-gray-500" onclick="togglePasswordVisibility('confirmPassword', 'togglePasswordIcon2')">
+          <i id="togglePasswordIcon2" class="fas fa-eye-slash"></i>
+        </span>
+        <div class="error text-red-500 text-sm mt-1"></div>
+      </div> -->
+
+      <!-- Submit Button -->
+      <!-- <button type="submit"
+        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full mt-2">
+        Sign Up
+      </button> -->
+
+      <!-- Login Redirect -->
+      <!-- <div class="flex mt-2 text-center justify-center font-light gap-1">
+        <span>Already have an account?</span>
+        <a href="Login.html" class="text-blue-500 hover:text-blue-800 cursor-pointer">Log in</a>
+      </div>
+    </form>
+  </div> -->
+
+  <!-- Script Section -->
+  <!-- <script>
+    function togglePasswordVisibility(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      } else {
+        input.type = "password";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      }
+    }
+
+    function validateForm() {
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirmPassword');
+      
+      const inputs = [name, email, password, confirmPassword];
+      let isValid = true;
+
+      inputs.forEach(input => {
+        const errorDiv = input.nextElementSibling;
+        if (input.value.trim() === "") {
+          errorDiv.textContent = `${input.name.charAt(0).toUpperCase() + input.name.slice(1)} is required`;
+          isValid = false;
+        } else {
+          errorDiv.textContent = "";
+        }
+      }); -->
+
+      <!-- // Password match check
+      // if (password.value.trim() !== confirmPassword.value.trim()) {
+      //   const confirmPasswordError = confirmPassword.parentElement.querySelector('.error');
+      //   confirmPasswordError.textContent = "Passwords do not match";
+
+      //   isValid = false;
+      // }
+      
+
+      // if (isValid) {
+      //   window.location.href = 'homepage.html';
+      // }
+
+      // return false; // prevent default form submit
+    // } -->
+ <!-- </script>
+
+ </body> -->
+<!-- </html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <div id="error" class="error"></div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("signupForm");
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const errorDiv = document.getElementById("error");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nameVal = name.value.trim();
+     const emailVal = email.value.trim().toLowerCase();
+      const passwordVal = password.value.trim();
+
+      if (nameVal === "" || emailVal === "" || passwordVal === "") {
+        errorDiv.textContent = "All fields are required.";
+        return;
+      }
+
+      if (!emailVal.includes("@") || !emailVal.includes(".")) {
+        errorDiv.textContent = "Please enter a valid email.";
+        return;
+      }
+
+      if (passwordVal.length < 6) {
+        errorDiv.textContent = "Password must be at least 6 characters.";
+        return;
+      }
+
+      const user = {
+        name: nameVal,
+        email: emailVal,
+        password: passwordVal,
+      };
+
+      localStorage.setItem("user", JSON.stringify(user));
+      window.location.href = "Login.html";
+    });
+  </script>
+
+</body>
+</html>

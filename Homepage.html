@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>MyTrip</title>    
+    <style>
+       
+
+        *{
+            scroll-behavior: smooth;
+        }
+        .destination{
+            margin: 40px 80px;
+            text-align: center;
+        }
+        .logo img{
+            max-width: 15%;
+          
+        }
+        .destination-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap:40px;
+        }
+        .destination-item img{
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        .destination-item p{
+            font-size: 15px;
+        }
+        /* <About Us> */
+            .about{
+                text-align: center;
+                padding: 0px 100px;
+                padding-bottom:100px;
+            }
+            .team-members{
+                display: flex;
+              
+            }
+            .team-member img{
+                width:300px;
+                height: 300px;
+                margin: 20px;
+                object-fit: cover;
+            }
+            .contact{
+                padding: 80px;
+                text-align: center;
+                background-color: #F7F7F7;
+            }
+            .contact-info ul{
+                align-items: center;
+            }
+            .contact-info li{
+                margin: 0 20px;
+                display: flex;
+                align-items: center;
+            }
+            .contact-info i{
+                margin-right: 10px;
+            }
+            .form{
+                width: 100%;
+            }
+            input,textarea{
+                width: 70%;
+                padding: 10px;
+                margin: 20px 0;
+                box-shadow: 0 0 5px rgba(0,0,0,0.1);
+                border-radius: 5px;
+            }
+            textarea{
+                height: 200px;
+            }
+            .navbar {
+  display: flex;
+  gap: 50px; /* Adjust spacing as needed */
+  list-style: none;
+  padding: 0;
+  margin: auto;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px; /* Optional: to match your text-lg */
+}
+
+.navbar a:hover {
+  color: rgb(220, 215, 215);
+  text-decoration: underline;
+}
+
+.form-group{
+    width: 600px;
+}
+
+.contact{
+      background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.contact:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+}
+
+.destination-item{
+  border: 1px solid #ccc;
+  border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  border-top: 1px solid #ccc;
+   overflow: hidden;
+}
+
+.destination-item:hover {
+  transform: scale(1.03); /* slight zoom */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}  
+
+ .team-member img{
+      border: 1px solid #ccc;
+  border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  border-top: 1px solid #ccc;
+   overflow: hidden;
+} 
+
+.team-member img:hover {
+  transform: scale(1.03); /* slight zoom */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}  
+
+
+           
+    </style>
+</head>
+<body>
+    <div class="w-full h-screen bg-no-repeat bg-cover bg-gradient-to-b from-black/80 to-black/60 " style="background-image: url('Travelbgimage3.jpg')">
+         <!-- Navbar -->
+        <nav class="flex justify-center text-center" style="display: flex; justify-content: space-between; padding: 10px 10px;">
+         <!-- Logo -->
+             <div class="pt-2">
+                <a href="#">
+                    <img src="logo.png" alt="Logo" style="width: 40px !important; height: 40px !important; margin-top: 5px;" />
+                </a>
+             </div>
+
+             <!-- Navigation Links -->
+             <ul class="navbar" style="display: flex; list-style: none; margin: auto; gap:150px">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#destinations" class="hover:underline">Destinations</a></li>
+                <li><a href="#hotels" class="hover:underline">Hotels</a></li>
+                <li><a href="#activities" class="hover:underline">Activities</a></li>
+                <li><a href="#about" class="hover:underline">About</a></li>
+                <li><a href="#contact" class="hover:underline">Contact</a></li>
+             </ul>
+
+             
+
+        </nav>
+    </div>
+
+        <!-- <Destination> -->
+        <div id="destinations" class="destination">
+          <h2>Popular Destinations</h2>
+            <div class="destination-grid" class="grid gap-10 mt-96">
+             <div class="destination-item">
+                <img src="New York City.jpg" alt=""/>
+                <div class="text-left mt-3 font-extrabold">New York City</div>
+                <p class="mt-3 text-left text-sm">Visit the city that never sleeps and discover its iconic landmarks, world-class museum, and diverse neighborhoods.</p>
+            </div>
+
+            <div class="destination-item">
+                <img src="Switzerland.jpeg" alt=""/>
+                <div class="text-left mt-3 font-bold">Switzerland</div>
+                <p class="mt-3 text-left text-sm">Experience the breathtaking natural beauty of Switzerland, with its majestic Alps and serene lakes.</p>
+            </div>
+
+            <div class="destination-item">
+                <img src="france-paris-eiffel-tower.jpg" alt=""/>
+                <div class="text-left mt-3 font-bold">Paris</div>
+                <p class="mt-3 text-left text-sm">Delve into the cultural richness of Paris, a city alive with art, music, and literature.</p>
+            </div>
+        </div>
+        </div>
+        <!-- <Hotels> -->
+            <div id="hotels" class="destination">
+                <h2>Featured Hotels</h2>
+                  <div class="destination-grid" class="grid gap-10">
+                   <div class="destination-item">
+                      <img src="the-ritz-carlton.jpg" alt=""/>
+                      <div class="text-left mt-3 font-bold">The Ritz Carlton</div>
+                      <p class="mt-3 text-left text-sm">Experience luxury accomodations and impeccable service at The Ritz Carlton, located in the heart of the city.</p>
+                  </div>
+      
+                  <div class="destination-item">
+                      <img src="The-Four-Season.jpg" alt=""/>
+                      <div class="text-left mt-3 font-bold">The Four Seasons</div>
+                      <p class="mt-3 text-left text-sm">Relax in style at The Four Seasons, featuring breathtaking views, an award-winning spa, and gourmet dining options.</p>
+                  </div>
+      
+                  <div class="destination-item">
+                      <img src="TAL-waldorf-astoria.jpg" alt=""/>
+                      <div class="text-left mt-3 font-bold">The Waldorf Astoria</div>
+                      <p class="mt-3 text-left text-sm">Indulge in luxury at The Waldorf Astoria, a historic landmark hotel renowned for its elegance and sophistication.</p>
+                  </div>
+              </div>
+              </div>
+              <!-- <Activities> -->
+                <div id="activities" class="destination">
+                    <h2>Featured Activities</h2>
+                      <div class="destination-grid" class="grid gap-10 rounded">
+                       <div class="destination-item">
+                          <img src="Grand-Canyon-Hiking.jpg" alt=""/>
+                          <div class="text-left mt-3 font-bold">Hiking The Grand Canyon</div>
+                          <p class="mt-3 text-left text-sm">Experience luxury accomodations and impeccable service at The Ritz Carlton, located in the heart of the city.</p>
+                      </div>
+          
+                      <div class="destination-item">
+                          <img src="Hot-air-baloon.jpg" alt=""/>
+                          <div class="text-left mt-3 font-bold">Whale Watching In Alaska</div>
+                          <p class="mt-3 text-left text-sm">Relax in style at The Four Seasons, featuring breathtaking views, an award-winning spa, and gourmet dining options.</p>
+                      </div>
+          
+                      <div class="destination-item">
+                          <img src="Snorkeling.jpg" alt=""/>
+                          <div class="text-left mt-3 font-bold">Snorkeling In Hawaii</div>
+                          <p class="mt-3 text-left text-sm">Indulge in luxury at The Waldorf Astoria, a historic landmark hotel renowned for its elegance and sophistication.</p>
+                      </div>
+                  </div>
+                  </div>
+                  <!-- <About us> -->
+                    <div id="about" class="about">
+                        <h2>About Us</h2>
+                        <p class="text-xl mb-10">Our company is committed to delivering exceptional travel experiences tailored to our customers' unique interests and preferences.We specialize in crafting personalized itineraries that ensure each journey is unforgettable.</p>
+                        <div class="team-members">
+                            <div class="text-2xl font-bold">Meet Our Team</div>
+                            <div class="team-member">
+                                <img src="Founder and CEO.jpg" alt="">
+                                <div class="font-bold">John Smith</div>
+                                <p>Founder & CEO</p>
+                            </div>
+                            <div class="team-member">
+                                <img src="Head Of Operations.jpg" alt="">
+                                <div class="font-bold">Jone Doe</div>
+                                <p>Head Of Operations</p>
+                            </div>
+                            <div class="team-member">
+                                <img src="Marketing-director.jpg" alt="">
+                                <div class="font-bold">Novie Smith</div>
+                                <p>Marketing Director</p>
+                            </div>
+                        </div>
+                        <!-- <Contact us> -->
+                            <div id="contact" class="contact" style="background-color: white;">
+                                <h2>Contact Us</h2>
+                                <div class="contact-info">
+                                    <p class="mb-5">If you have any questions or would like to book a trip, please fill out the form below or contact us using the information provided.</p>
+                                    <!-- <ul class="mb-5 flex items-center justify-center">
+                                        <li><i class="fa-solid fa-location-dot"></i>123 Main St, New York USA </li>
+                                        <li class="text-xs"><i class="fa-solid fa-envelope"><a class="font-bold ml-3 underline" href="mailto:info@travelcompany.com">info@travelcomapny.com</a></i> </li>
+                                        <li><i class="fa-solid fa-phone"></i><a href="tel:555-123-4567">555-123-4567</a> </li>
+                                    </ul> -->
+                                </div>
+
+                                <div class = contactus style =" display: flex; justify-content: space-between; padding-right: 40px; background-color: white;">
+                                    <form action="#" class="form">
+                                        <div class="form-group">
+                                            <input type="name" name="name" id="name" placeholder="Enter Your Name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email" id="email" placeholder="Enter Your Email" />
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Message"></textarea>
+                                        </div>
+                                        <button class="bg-red-500 px-3 py-0.5 mt-6 tracking-widest hover:bg-red-600 text-gray-100" style="background-color:blue; width:450px; padding: 10px; border-radius: 6px; margin-right: 20px; color: white;">Submit</button>
+                                    </form>
+
+                                    <img src="contactus.png" alt="contact-image" class="w-10 h-auto rounded-lg shadow-md" style="width:600px" />
+
+                                </div>
+                            </div>
+
+                    </div>
+                   
+    </div>
+    
+    
+</body>
+</html>

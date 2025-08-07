@@ -1,0 +1,121 @@
+<!-- //REALONE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Form</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome 6 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body style="background-image: url('Signupbackground.png'); background-size: cover; background-repeat: no-repeat; background-position: center; height: 100vh; width: 100%;">
+
+  <!-- Centered Container -->
+  <div class="flex justify-center items-center h-full w-full">
+    
+    <!-- Form -->
+    <form id="form" class="bg-white p-6 rounded shadow w-[300px]">
+      
+      <!-- Email Input -->
+      <div class="flex flex-col mb-4">
+        <label for="email" class="mb-1 text-sm font-medium text-gray-700">Email</label>
+        <input id="email" name="email" type="email" required placeholder="Enter your email" class="p-2 w-full rounded border-2 border-[#f0f0f0] focus:outline-none"/>
+        <div id="emailError" class="text-red-500 text-sm mt-1"></div>
+      </div>
+
+      <!-- Password Input with Toggle -->
+      <div class="relative flex flex-col mb-4">
+        <label for="password" class="mb-1 text-sm font-medium text-gray-700">Password</label>
+        <input id="password" name="password" type="password" required placeholder="Enter your password"
+          class="p-2 w-full rounded border-2 border-[#f0f0f0] focus:outline-none pr-10"
+        />
+        <span
+          class="absolute right-3 top-9 cursor-pointer text-gray-500"
+          onclick="togglePasswordVisibility()"
+        >
+          <i id="togglePasswordIcon" class="fas fa-eye-slash"></i>
+        </span>
+        <div id="passwordError" class="text-red-500 text-sm mt-1"></div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full mt-2">Login</button>
+      
+      <div class="flex mt-2 text-center justify-center font-light gap-1">
+        <span>Don't have an account?</span>  
+        <a href="Signup.html" class="text-blue-500 hover:text-blue-800 cursor-pointer">Signup</a>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const form = document.getElementById("form");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // prevent redirect
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const emailError = document.getElementById("emailError");
+      const passwordError = document.getElementById("passwordError");
+
+      let valid = true;
+
+      // Reset errors
+      emailError.textContent = "";
+      passwordError.textContent = "";
+
+      // Validate email
+      if (!email) {
+        emailError.textContent = "Email is required.";
+        valid = false;
+      } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+        emailError.textContent = "Please enter a valid email address.";
+        valid = false;
+      }
+
+      // Validate password
+      if (!password) {
+        passwordError.textContent = "Password is required.";
+        valid = false;
+      } else if (password.length < 6) {
+        passwordError.textContent = "Password must be at least 6 characters.";
+        valid = false;
+      }
+
+      // If valid, redirect
+      if (valid) {
+        window.location.href = "homepage.html"; // change as needed
+      }
+    });
+
+    function togglePasswordVisibility() {
+      const passwordInput = document.getElementById("password");
+      const icon = document.getElementById("togglePasswordIcon");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      } else {
+        passwordInput.type = "password";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      }
+    }
+  </script>
+
+  <!-- Font Awesome for eye icon -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
