@@ -125,6 +125,16 @@
         icon.classList.add("fa-eye-slash");
       }
     }
+
+
+    // Clear errors live while typing
+  document.getElementById("email").addEventListener("input", () => {
+    document.getElementById("emailError").textContent = "";
+  });
+  document.getElementById("password").addEventListener("input", () => {
+    document.getElementById("passwordError").textContent = "";
+  });
+
   </script>
 
   <!-- Font Awesome for eye icon -->
