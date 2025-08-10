@@ -121,7 +121,7 @@
       const emailError = email.parentElement.querySelector('.error');
       const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
       if (email.value.trim() !== "" && !gmailPattern.test(email.value.trim())) {
-      emailError.textContent = "Only Gmail addresses are allowed";
+      emailError.textContent = "Please enter a valid email address.";
       isValid = false;
       }
 
